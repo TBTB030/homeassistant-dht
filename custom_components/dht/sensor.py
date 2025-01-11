@@ -20,7 +20,8 @@ from homeassistant.const import (
     CONF_NAME,
     CONF_PIN,
     PERCENTAGE,
-    TEMP_CELSIUS,
+    # TEMP_CELSIUS,
+    UnitOfTemperature,
 )
 from homeassistant.core import HomeAssistant
 import homeassistant.helpers.config_validation as cv
@@ -44,7 +45,8 @@ SENSOR_TYPES: tuple[SensorEntityDescription, ...] = (
     SensorEntityDescription(
         key=SENSOR_TEMPERATURE,
         name="Temperature",
-        native_unit_of_measurement=TEMP_CELSIUS,
+        # native_unit_of_measurement=TEMP_CELSIUS,
+        native_unit_of_measurement=UnitOfTemperature.CELSIUS,
         device_class=SensorDeviceClass.TEMPERATURE,
         state_class=SensorStateClass.MEASUREMENT,
     ),
